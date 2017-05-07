@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CardContainer from './Cards/CardsContainer';
-import HTML5Backend from 'react-dnd-html5-backend';
-import { DragDropContextProvider } from 'react-dnd';
+
 import DropableContainer from './Dropable/DropableContainer';
 import { createContainer } from 'react-meteor-data';
 import { Cards } from '../api/cards.js';
@@ -60,14 +59,14 @@ class App extends Component {
   }
 
   restartGame(){
-    console.log('restarting');
     this.setState({cards: cardStack});
+    Meteor.call('updateUserCards', cardStack);
   }
  
   render() {
     console.log('rerendering');
     return (
-      <DragDropContextProvider backend={HTML5Backend}>
+      
         <div className="container">
           <LoginButtons />
           <header>
@@ -84,11 +83,10 @@ class App extends Component {
           {!this.state.user && 
             <div>PLease Login</div>
           }
-          {
+          {this.state.cards.length === 0 &&
             <button onClick={this.restartGame.bind(this)}>Restart</button>
           }
         </div>
-      </DragDropContextProvider>
     );
   }
 }
