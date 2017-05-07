@@ -1,0 +1,21 @@
+{
+  "name": "sample-app",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "classnames": "^2.2.5",
+    "meteor-node-stubs": "^0.2.6",
+    "react": "^15.5.4",
+    "react-addons-pure-render-mixin": "^15.5.2",
+    "react-dnd": "^2.3.0",
+    "react-dnd-html5-backend": "^2.3.0",
+    "react-dom": "^15.5.4",
+    "react-komposer": "^2.0.0",
+    "react-meteor-data": "^0.2.10",
+    "react-tap-event-plugin": "^2.0.1",
+    "tracker-component": "^1.3.21"
+  }
+}
